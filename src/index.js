@@ -9,7 +9,7 @@ const { isValidHTMLNesting } = require('validate-html-nesting');
  */
 
 function isCompName(tag) {
-	return tag[0] !== tag[0].toUpperCase();
+	return tag[0] === tag[0].toUpperCase();
 }
 
 /**
@@ -28,14 +28,14 @@ module.exports = function (babel) {
 			if (t.isJSXIdentifier(elName)) {
 				const elTagName = elName.name;
 				// if not a component
-				if (isCompName(elTagName)) {
+				if (!isCompName(elTagName)) {
 					const parent = path.parent;
 					if (t.isJSXElement(parent)) {
 						const parentElName = parent.openingElement.name;
 						if (t.isJSXIdentifier(parentElName)) {
 							const parentElTagName = parentElName.name;
 							// if parent is not a component
-							if (isCompName(parentElTagName)) {
+							if (!isCompName(parentElTagName)) {
 								if (!isValidHTMLNesting(parentElName.name, elName.name)) {
 									const pluginOptions = /** @type {PluginOptions} */ (state);
 
@@ -62,3 +62,5 @@ module.exports = function (babel) {
 		visitor: domValidator,
 	};
 };
+
+module.exports.isCompName = isCompName;
