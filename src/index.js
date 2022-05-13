@@ -58,7 +58,7 @@ module.exports = function (babel) {
 	};
 
 	return {
-		name: 'babel-plugin-validate-jsx-nesting', // not required
+		name: 'validate-jsx-nesting', // not required
 		visitor: domValidator,
 	};
 };
