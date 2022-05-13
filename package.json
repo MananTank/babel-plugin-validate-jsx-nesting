@@ -1,0 +1,28 @@
+{
+  "name": "validate-jsx-nesting",
+  "version": "0.0.1",
+  "description": "compile time JSX nesting validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "JSX",
+    "validation",
+    "html-validation"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@types/jest": "^27.5.1",
+    "jest": "^28.1.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.10",
+    "validate-html-nesting": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@babel/plugin-syntax-jsx": "latest"
+  }
+}
