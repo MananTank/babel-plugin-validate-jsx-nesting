@@ -2,7 +2,7 @@
   "name": "babel-plugin-validate-jsx-nesting",
   "version": "0.0.1",
   "description": "compile time JSX nesting validation",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest"
   },
