@@ -37,7 +37,8 @@ module.exports = function (babel) {
 							// if parent is not a component
 							if (!isCompName(parentElTagName)) {
 								if (!isValidHTMLNesting(parentElName.name, elName.name)) {
-									const pluginOptions = /** @type {PluginOptions} */ (state);
+									// @ts-ignore
+									const pluginOptions = /** @type {PluginOptions} */ (state.opts);
 
 									const error = path.buildCodeFrameError(
 										`Invalid HTML nesting: <${elName.name}> can not be child of <${parentElName.name}>`

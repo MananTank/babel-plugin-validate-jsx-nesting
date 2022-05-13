@@ -12,6 +12,17 @@ function testPlugin(inputCode) {
 	}).code;
 }
 
+/**
+ * @param {string} inputCode
+ * @returns
+ */
+function testPluginWarnOnly(inputCode) {
+	return transform(inputCode, {
+		plugins: [syntaxJSX, [plugin, { warnOnly: true }]],
+	}).code;
+}
+
 module.exports = {
 	testPlugin,
+	testPluginWarnOnly,
 };
