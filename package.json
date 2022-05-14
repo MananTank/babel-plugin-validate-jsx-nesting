@@ -7,11 +7,15 @@
     "test": "jest"
   },
   "keywords": [
-    "JSX",
-    "validation",
-    "html-validation"
+    "jsx validator",
+    "dom validator",
+    "html validator"
   ],
-  "author": "",
+  "author": "Manan Tank",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MananTank/validate-jsx-nesting.git"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-syntax-jsx": "^7.16.7",
@@ -20,7 +24,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.17.10",
-    "validate-html-nesting": "^0.0.1"
+    "validate-html-nesting": "^1.0.2"
   },
   "peerDependencies": {
     "@babel/plugin-syntax-jsx": "latest"
