@@ -1,22 +1,35 @@
 # babel-plugin-validate-jsx-nesting
 
-### compile time JSX nesting validation
+### Compile time JSX nesting validation
 
-<img src='assets/ss1.png' />
+Example
+
+```html
+Failed to Compile.
+
+Error: Invalid HTML nesting: <hr> can not be child of <p>
+  1 | <p>
+  2 |   <span> Hello </span>
+> 3 |   <hr />
+    |   ^^^^^^
+  4 |   <span> World </span>
+  5 | </p>
+  6 |
+```
 
 <br />
 
 ### Why this validation is important?
 
-without such validation, when jsx is converted to html and rendered in the DOM, browser will try to fix the invalid nestings ( such as `<hr>` inside `<p>` ) and thus the rendered DOM will have different structure than JSX structure.
+without such validation, when JSX is converted to HTML and rendered in the DOM, the Browser will try to fix the invalid nestings ( such as `<hr>` inside `<p>` ) and thus the rendered DOM will have a different structure than JSX structure.
 
-This is a big issue for frameworks which rely on JSX rendering the exact same elements in DOM. This can lead to unexpected behaviors.
+This is a big issue for frameworks that rely on JSX rendering the exact same elements in DOM. This can lead to unexpected behaviors.
 
 <br />
 
 ### Validation library
 
-This babel plugin uses [validate-html-nesting](https://github.com/MananTank/validate-html-nesting) library for validating html element nesting
+This babel plugin uses the [validate-html-nesting](https://github.com/MananTank/validate-html-nesting) library for validating HTML element nesting
 
 <br />
 
@@ -30,11 +43,11 @@ npm i -D babel-plugin-validate-jsx-nesting
 
 ## babel config
 
-Refer to [babel config](https://babeljs.io/docs/en/configuration) guide to learn about configuring babel
+Refer to the [babel config](https://babeljs.io/docs/en/configuration) guide to learn about configuring babel
 
 ## no options
 
-with this config plugin throws error when invalid jsx nesting is found
+with this config, the plugin throws an error when invalid JSX nesting is found
 
 ```json
 {
@@ -46,7 +59,7 @@ with this config plugin throws error when invalid jsx nesting is found
 
 ### with `warnOnly: true` option
 
-with this config plugin logs a warning when invalid jsx nesting is found
+With this config, the plugin logs a warning when invalid JSX nesting is found
 
 ```json
 {
